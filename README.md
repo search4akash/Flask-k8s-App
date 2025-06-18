@@ -63,8 +63,8 @@ docker build -t flask-k8s-app:v1 .
 
 ### 🔹 Step 5: Deploy to Kubernetes
 
-👉 * Deployment YAML: [k8s/deployment.yaml](./k8s/deployment.yaml)
-👉 * Service YAML: [k8s/service.yaml](./k8s/service.yaml)
+*👉 Deployment YAML: [k8s/deployment.yaml](./k8s/deployment.yaml)
+*👉 Service YAML: [k8s/service.yaml](./k8s/service.yaml)
 
 ```bash
 kubectl apply -f k8s/deployment.yaml
