@@ -1,4 +1,4 @@
-# 🌐 Flask App Deployment using Docker, Kubernetes & Terraform
+# 🌐 Flask App Deployment using Docker, Kubernetes & Terrafor
 
 This project demonstrates deploying a simple **Flask web app** using:
 
