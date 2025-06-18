@@ -20,7 +20,6 @@ This project demonstrates deploying a simple **Flask web app** using:
 ├── Dockerfile                  # Docker image definition
 ├── requirements.txt            # Flask dependency
 └── .gitignore                  # Ignores Terraform state, lockfiles, etc.
-
 ```
 
 ---
@@ -34,70 +33,69 @@ Install the following:
 * [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 * [Terraform](https://developer.hashicorp.com/terraform/install)
 
-### 🔹 Step 2: Build the Flask App
+### 🔹 Step 2: Enable Docker Inside Minikube
 
-👉 Flask App file: [app/app.py](https://chatgpt.com/c/app/app.py)
-👉 Requirements: [requirements.txt](https://chatgpt.com/c/requirements.txt)
-
-```
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python app/app.py  # To test locally
-
+```bash
+eval $(minikube docker-env)
 ```
 
-### 🔹 Step 3: Dockerize the App
+### 🔹 Step 3: Build Docker Image
 
-👉 Dockerfile available: [Dockerfile](https://chatgpt.com/c/Dockerfile)
+👉 Dockerfile: [Dockerfile](./Dockerfile)
+👉 Flask App: [app/app.py](./app/app.py)
 
-```
-eval $(minikube docker-env)  # Connect Docker to Minikube
+```bash
 docker build -t flask-k8s-app:v1 .
-
 ```
 
-### 🔹 Step 4: Orchestrate with Kubernetes
+### 🔹 Step 4: Deploy to Kubernetes
 
-👉 Deployment YAML: [k8s/deployment.yaml](https://chatgpt.com/c/k8s/deployment.yaml)
-👉 Service YAML: [k8s/service.yaml](https://chatgpt.com/c/k8s/service.yaml)
+👉 Deployment YAML: [k8s/deployment.yaml](./k8s/deployment.yaml)
+👉 Service YAML: [k8s/service.yaml](./k8s/service.yaml)
 
-```
+```bash
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
+```
+
+### 🔹 Step 5: Access the Flask App
+
+```bash
 minikube service flask-k8s-service --url
-
 ```
 
-### 🔹 Step 5: Automate with Terraform
+### 🔹 Step 6: Deploy via Terraform (Optional)
 
-👉 Terraform config: [terraform/main.tf](https://chatgpt.com/c/terraform/main.tf)
+👉 Terraform Config: [terraform/main.tf](./terraform/main.tf)
 
-```
+```bash
 cd terraform
 terraform init
 terraform apply
-
 ```
 
-> ⚠️ Ensure Minikube is running and the Kubernetes provider is set.
+> ⚠️ Ensure Kubernetes provider is configured and Minikube is running.
 
 ---
 
-| Step Task Link |                |                                                                  |
-| -------------- | -------------- | ---------------------------------------------------------------- |
-| 1️⃣            | Flask App      | [app/app.py](https://chatgpt.com/c/app/app.py)                   |
-| 2️⃣            | Dockerfile     | [Dockerfile](https://chatgpt.com/c/Dockerfile)                   |
-| 3️⃣            | K8s Deployment | [k8s/deployment.yaml](https://chatgpt.com/c/k8s/deployment.yaml) |
-| 4️⃣            | K8s Service    | [k8s/service.yaml](https://chatgpt.com/c/k8s/service.yaml)       |
-| 5️⃣            | Terraform IaC  | [terraform/main.tf](https://chatgpt.com/c/terraform/main.tf)     |
+### 📄 Deliverables Summary
+
+| Step | Task           | Resource Link                                |
+| ---- | -------------- | -------------------------------------------- |
+| 1️⃣  | Flask App      | [app/app.py](./app/app.py)                   |
+| 2️⃣  | Dockerfile     | [Dockerfile](./Dockerfile)                   |
+| 3️⃣  | K8s Deployment | [k8s/deployment.yaml](./k8s/deployment.yaml) |
+| 4️⃣  | K8s Service    | [k8s/service.yaml](./k8s/service.yaml)       |
+| 5️⃣  | Terraform IaC  | [terraform/main.tf](./terraform/main.tf)     |
 
 ---
 
-✅ Docker image creation and tagging
-✅ Kubernetes deployments using YAML
-✅ Infrastructure-as-Code using Terraform
-✅ Local cloud simulation using Minikube
+### 🧠 Learning Outcomes
+
+✅ Built and containerized a Flask app with Docker
+✅ Managed deployment with Kubernetes YAML files
+✅ Automated infrastructure using Terraform
+✅ Understood Minikube and local orchestration environments
 
 ---
 
@@ -105,6 +103,3 @@ terraform apply
 Cloud & DevOps Enthusiast
 📧 [search4akash@outlook.com](mailto:search4akash@outlook.com)
 🔗 [LinkedIn](https://www.linkedin.com/in/akashmajumdar2003)
-
----
-
