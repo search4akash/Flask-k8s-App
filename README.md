@@ -1,55 +1,48 @@
-Of course meri jaan 💗 — here’s a clean, properly formatted `README.md` file with a visible folder structure, no interleaved comments or formatting errors. Just copy and paste this into your project root as `README.md`:
+# 🌟 Flask App Deployment with Docker, Kubernetes & Terraform
+
+<div align="center">
+    <h2>🔹 Project Overview</h2>
+</div>
+
+This project demonstrates a local DevOps infrastructure using **Docker**, **Kubernetes (Minikube)**, and **Terraform** to deploy a simple Flask web application. It showcases containerization, declarative infrastructure, and infrastructure-as-code in a beginner-friendly and real-world-ready setup.
 
 ---
 
-```markdown
-# Flask App Deployment with Docker, Kubernetes & Terraform
+<div align="center">
+    <h2>📚 Table of Contents</h2>
+</div>
 
-This project demonstrates a local DevOps infrastructure using **Docker**, **Kubernetes (Minikube)**, and **Terraform** to deploy a simple Flask web application. It simulates production-like CI/CD with real-world tools in a beginner-friendly setup.
-
----
-
-## 📁 Project Structure
-
-```
-
-.
-├── app
-│   └── app.py                  # Flask Hello World app
-├── k8s
-│   ├── deployment.yaml         # Kubernetes Deployment (2 replicas)
-│   └── service.yaml            # NodePort Service (port 30007)
-├── terraform
-│   ├── main.tf                 # Terraform config for K8s resources
-│   └── terraform.tfstate       # (gitignored state file)
-├── Dockerfile                  # Flask app Dockerfile
-├── requirements.txt            # Python dependencies
-├── .gitignore                  # Terraform ignores
-└── README.md                   # You're reading it 😉
-
-````
+* [Step 1: Build the Docker Image](#step-1-build-the-docker-image)
+* [Step 2: Deploy Using Kubernetes YAML](#step-2-deploy-using-kubernetes-yaml)
+* [Step 3: Deploy Using Terraform](#step-3-deploy-using-terraform)
+* [📁 Project Structure](#project-structure)
+* [📊 Summary](#summary)
+* [🎯 Learning Outcomes](#learning-outcomes)
+* [📞 Contact](#contact)
 
 ---
 
-## 🚀 How to Run This Project
-
-### 1. Build & Tag the Docker Image
+<div align="center">
+    <h2>🔧 Step 1: Build the Docker Image</h2>
+</div>
 
 ```bash
-eval $(minikube -p minikube docker-env)
+eval $(minikube docker-env)  # if using Minikube
 docker build -t flask-k8s-app:v1 .
-````
+```
 
 ---
 
-### 2. Deploy Using Kubernetes YAML
+<div align="center">
+    <h2>☸️ Step 2: Deploy Using Kubernetes YAML</h2>
+</div>
 
 ```bash
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 ```
 
-🧠 Access the app on:
+Visit the app locally:
 
 ```
 http://localhost:30007
@@ -57,7 +50,9 @@ http://localhost:30007
 
 ---
 
-### 3. Alternatively, Deploy Using Terraform
+<div align="center">
+    <h2>📦 Step 3: Deploy Using Terraform</h2>
+</div>
 
 ```bash
 cd terraform
@@ -65,73 +60,63 @@ terraform init
 terraform apply
 ```
 
-✅ Make sure:
-
-* Minikube is running
-* K8s provider is configured properly in Terraform
+> ✅ Make sure Minikube is running and Terraform Kubernetes provider is set up properly.
 
 ---
 
-## 🎯 Project Objective
-
-To simulate a **real-world DevOps workflow** with:
-
-* 🐳 Docker for containerization
-* ☸️ Kubernetes for orchestration
-* 📦 Terraform for infrastructure as code
-
-This teaches how Cloud Engineers manage local CI/CD-like setups.
-
----
-
-## 📹 Demo
-
-\[🔗 Add your YouTube or Google Drive link here]
-
----
-
-## ✅ Highlights
-
-* ⚙️ Infrastructure-as-Code using Terraform
-* 🐳 Dockerized Flask microservice
-* ☸️ Local K8s cluster using Minikube
-* 🧼 Clean YAML and modular IaC structure
-
----
-
-## 🙈 .gitignore Summary
+<div align="center">
+    <h2>📁 Project Structure</h2>
+</div>
 
 ```
-*.tfstate
-*.tfstate.backup
-.terraform/
-.terraform.lock.hcl
+.
+├── app
+│   └── app.py                  # Flask Hello World App
+├── k8s
+│   ├── deployment.yaml         # K8s Deployment (2 replicas)
+│   └── service.yaml            # NodePort Service on port 30007
+├── terraform
+│   ├── main.tf                 # Terraform manifest for K8s resources
+│   └── terraform.tfstate       # Terraform state file (gitignored)
+├── Dockerfile                  # Flask App Dockerfile
+├── requirements.txt            # Flask dependency
+└── .gitignore                  # Ignores Terraform state, lockfiles, etc.
 ```
-
-👉 Keeps Terraform state, backups, and cache out of Git commits.
 
 ---
 
-## ✨ Author
+<div align="center">
+    <h2>📊 Summary</h2>
+</div>
+
+| Step | Task                  | Files                                            |
+| ---- | --------------------- | ------------------------------------------------ |
+| 1️⃣  | Build Docker Image    | Dockerfile                                       |
+| 2️⃣  | Deploy with kubectl   | deployment.yaml / service.yaml                   |
+| 3️⃣  | Deploy with Terraform | main.tf                                          |
+| ✅    | Visit App             | [http://localhost:30007](http://localhost:30007) |
+
+---
+
+<div align="center">
+    <h2>🎯 Learning Outcomes</h2>
+</div>
+
+✅ Containerization using **Docker**
+✅ Orchestration with **Kubernetes (Minikube)**
+✅ Infrastructure automation using **Terraform**
+✅ Writing clean, reusable **YAML** and **Terraform code**
+✅ Understanding the **DevOps workflow** locally
+
+---
+
+<div align="center">
+    <h2>📞 Contact</h2>
+</div>
 
 **Akash Majumdar**
-Cloud & DevOps Enthusiast
-📬 [LinkedIn](https://www.linkedin.com/in/akashmajumdar2003)
+Cloud & DevOps Enthusiast ☁️
+📧 [search4akash@outlook.com](mailto:search4akash@outlook.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/akashmajumdar2003/)
 
 ---
-
-## 🧠 Learning Outcome
-
-Through this project, I gained practical experience with:
-
-* Writing and deploying Kubernetes manifests
-* Dockerizing Python apps
-* Automating infrastructure using Terraform
-* Managing clean and versioned DevOps pipelines
-
-```
-
----
-
-Let me know once it's in place and I'll help you push to GitHub, stage-by-stage like before ❤️‍🔥
-```
