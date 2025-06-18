@@ -42,8 +42,8 @@ eval $(minikube docker-env)
 
 ### 🔹 Step 3: Build the Flask App
 
-👉 Flask App Code: [app/app.py](./app/app.py)
-👉 Requirements File: [requirements.txt](./requirements.txt)
+* 👉 Flask App Code: [app/app.py](./app/app.py)
+* 👉 Requirements File: [requirements.txt](./requirements.txt)
 
 ```bash
 pip install -r requirements.txt
@@ -54,8 +54,8 @@ python app/app.py
 
 ### 🔹 Step 4: Build Docker Image
 
-👉 Dockerfile: [Dockerfile](./Dockerfile)
-👉 Flask App: [app/app.py](./app/app.py)
+* 👉 Dockerfile: [Dockerfile](./Dockerfile)
+* 👉 Flask App: [app/app.py](./app/app.py)
 
 ```bash
 docker build -t flask-k8s-app:v1 .
@@ -105,10 +105,10 @@ terraform apply
 
 ### 🧠 Learning Outcomes
 
-* **✅ Built and containerized a Flask app with Docker**
-* **✅ Managed deployment with Kubernetes YAML files**
-* **✅ Automated infrastructure using Terraform**
-* **✅ Understood Minikube and local orchestration environments**
+* **✅ Built and Containerized a Flask App with Docker**
+* **✅ Managed Deployment with Kubernetes YAML files**
+* **✅ Automated Infrastructure using Terraform**
+* **✅ Understood Minikube and Local Orchestration Environments**
 
 ---
 
