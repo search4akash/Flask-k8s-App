@@ -1,0 +1,32 @@
+# Ignore Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+
+# Ignore Terraform provider binaries & lock files
+.terraform/
+.terraform.lock.hcl
+
+# VS Code settings
+.vscode/
+
+# Python cache (if using Flask)
+__pycache__/
+*.pyc
+
+# Docker
+*.log
+*.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Ignore generated files from Terraform plan
+*.tfplan
+
+# Node.js (if using Express in other projects)
+node_modules/
+
+# Personal config
+.env.local
+.env.*
