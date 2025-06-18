@@ -54,6 +54,7 @@ eval $(minikube docker-env)
 ### 🔹 Step 3: Build Docker Image
 
 👉 Dockerfile available [here](./Dockerfile)
+👉 Flask App file available [here](./app/app.py)
 
 ```bash
 docker build -t flask-k8s-app:v1 .
