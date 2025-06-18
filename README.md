@@ -2,7 +2,7 @@
 
 This project demonstrates deploying a simple **Flask web app** using:
 
-✅ **Docker** for containerization
+ *Docker* for containerization
 ✅ **Kubernetes (Minikube)** for orchestration
 ✅ **Terraform** for infrastructure-as-code (IaC) deployment
 
