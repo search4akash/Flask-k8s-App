@@ -1,4 +1,4 @@
-# Ignore Terraform state file
+# Ignore Terraform state files
 terraform.tfstate
 terraform.tfstate.backup
 
