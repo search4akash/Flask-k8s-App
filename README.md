@@ -2,9 +2,9 @@
 
 This project demonstrates deploying a simple **Flask web app** using:
 
-* Docker for containerization
-* Kubernetes (Minikube) for orchestration
-* Terraform for infrastructure-as-code (IaC) deployment
+✅ **Docker** for containerization
+✅ **Kubernetes (Minikube)** for orchestration
+✅ **Terraform** for infrastructure-as-code (IaC) deployment
 
 ---
 
@@ -39,7 +39,19 @@ Install the following:
 eval $(minikube docker-env)
 ```
 
-### 🔹 Step 3: Build Docker Image
+### 🔹 Step 3: Build the Flask App
+
+👉 Flask App Code: [app/app.py](./app/app.py)
+👉 Requirements File: [requirements.txt](./requirements.txt)
+
+```bash
+pip install -r requirements.txt
+python app/app.py
+```
+
+> ✅ This step is only for testing the Flask app locally.
+
+### 🔹 Step 4: Build Docker Image
 
 👉 Dockerfile: [Dockerfile](./Dockerfile)
 👉 Flask App: [app/app.py](./app/app.py)
@@ -48,7 +60,7 @@ eval $(minikube docker-env)
 docker build -t flask-k8s-app:v1 .
 ```
 
-### 🔹 Step 4: Deploy to Kubernetes
+### 🔹 Step 5: Deploy to Kubernetes
 
 👉 Deployment YAML: [k8s/deployment.yaml](./k8s/deployment.yaml)
 👉 Service YAML: [k8s/service.yaml](./k8s/service.yaml)
@@ -58,13 +70,13 @@ kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 ```
 
-### 🔹 Step 5: Access the Flask App
+### 🔹 Step 6: Access the Flask App
 
 ```bash
 minikube service flask-k8s-service --url
 ```
 
-### 🔹 Step 6: Deploy via Terraform (Optional)
+### 🔹 Step 7: Deploy via Terraform (Optional)
 
 👉 Terraform Config: [terraform/main.tf](./terraform/main.tf)
 
