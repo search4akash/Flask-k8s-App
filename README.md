@@ -106,9 +106,9 @@ terraform apply
 ### 🧠 Learning Outcomes
 
 * **✅ Built and containerized a Flask app with Docker**
-*✅ Managed deployment with Kubernetes YAML files
-*✅ Automated infrastructure using Terraform
-*✅ Understood Minikube and local orchestration environments
+* **✅ Managed deployment with Kubernetes YAML files**
+* **✅ Automated infrastructure using Terraform**
+* **✅ Understood Minikube and local orchestration environments**
 
 ---
 
