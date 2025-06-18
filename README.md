@@ -45,40 +45,39 @@ Install the following:
 * [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 * [Terraform](https://developer.hashicorp.com/terraform/install)
 
-### 🔹 Step 2: Enable Docker Inside Minikube
+### 🔹 Step 2: Build the Flask App
+
+👉 Flask App file: [app/app.py](./app/app.py)
+👉 Requirements: [requirements.txt](./requirements.txt)
 
 ```bash
-eval $(minikube docker-env)
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app/app.py  # To test locally
 ```
 
-### 🔹 Step 3: Build Docker Image
+### 🔹 Step 3: Dockerize the App
 
-👉 Dockerfile available [here](./Dockerfile)
-👉 Flask App file available [here](./app/app.py)
+👉 Dockerfile available: [Dockerfile](./Dockerfile)
 
 ```bash
+eval $(minikube docker-env)  # Connect Docker to Minikube
 docker build -t flask-k8s-app:v1 .
 ```
 
-### 🔹 Step 4: Deploy to Kubernetes
+### 🔹 Step 4: Orchestrate with Kubernetes
 
-👉 Kubernetes manifests:
-
-* Deployment: [k8s/deployment.yaml](./k8s/deployment.yaml)
-* Service: [k8s/service.yaml](./k8s/service.yaml)
+👉 Deployment YAML: [k8s/deployment.yaml](./k8s/deployment.yaml)
+👉 Service YAML: [k8s/service.yaml](./k8s/service.yaml)
 
 ```bash
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
-```
-
-### 🔹 Step 5: Access the Flask App
-
-```bash
 minikube service flask-k8s-service --url
 ```
 
-### 🔹 Step 6: Deploy via Terraform (Optional)
+### 🔹 Step 5: Automate with Terraform
 
 👉 Terraform config: [terraform/main.tf](./terraform/main.tf)
 
@@ -88,7 +87,7 @@ terraform init
 terraform apply
 ```
 
-> ⚠️ Ensure Kubernetes provider is configured and Minikube is running.
+> ⚠️ Ensure Minikube is running and the Kubernetes provider is set.
 
 ---
 
@@ -96,13 +95,13 @@ terraform apply
     <h2>📊 Summary</h2>
 </div>
 
-| Step | Task               | Link                                         |
-| ---- | ------------------ | -------------------------------------------- |
-| 1️⃣  | Build Docker Image | [Dockerfile](./Dockerfile)                   |
-| 2️⃣  | Flask App          | [app/app.py](./app/app.py)                   |
-| 3️⃣  | K8s Deployment     | [k8s/deployment.yaml](./k8s/deployment.yaml) |
-| 4️⃣  | K8s Service        | [k8s/service.yaml](./k8s/service.yaml)       |
-| 5️⃣  | Terraform IaC      | [terraform/main.tf](./terraform/main.tf)     |
+| Step | Task           | Link                                         |
+| ---- | -------------- | -------------------------------------------- |
+| 1️⃣  | Flask App      | [app/app.py](./app/app.py)                   |
+| 2️⃣  | Dockerfile     | [Dockerfile](./Dockerfile)                   |
+| 3️⃣  | K8s Deployment | [k8s/deployment.yaml](./k8s/deployment.yaml) |
+| 4️⃣  | K8s Service    | [k8s/service.yaml](./k8s/service.yaml)       |
+| 5️⃣  | Terraform IaC  | [terraform/main.tf](./terraform/main.tf)     |
 
 ---
 
