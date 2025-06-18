@@ -2,24 +2,25 @@
 
 This project demonstrates deploying a simple **Flask web app** using:
 
-* Docker for containerization
-* Kubernetes (Minikube) for orchestration
-* **Terraform** for infrastructure-as-code (IaC) deployment
+* **Python** for App Development
+* **Docker** for Containerization
+* **Kubernetes** (Minikube) for Container Orchestration
+* **Terraform** for Infrastructure-as-Code Deployment
 
 ---
 
 ```
 .
 ├── app
-│   └── app.py                  # Flask "Hello World" application
+│   └── app.py                  #Simple Flask "Hello World" application
 ├── k8s
 │   ├── deployment.yaml         # K8s Deployment (2 replicas)
-│   └── service.yaml            # NodePort service on port 30007
+│   └── service.yaml            # NodePort Service on port 30007
 ├── terraform
-│   ├── main.tf                 # Terraform manifest for Kubernetes resources
-├── Dockerfile                  # Docker image definition
-├── requirements.txt            # Flask dependency
-└── .gitignore                  # Ignores Terraform state, lockfiles, etc.
+│   ├── main.tf                 # Terraform Manifest for Kubernetes Resources
+├── Dockerfile                  # Docker Image Definition
+├── requirements.txt            # Flask Dependencies
+└── .gitignore                  # Ignores Terraform state, Lockfiles, etc.
 ```
 
 ---
@@ -104,14 +105,14 @@ terraform apply
 
 ### 🧠 Learning Outcomes
 
-✅ Built and containerized a Flask app with Docker
-✅ Managed deployment with Kubernetes YAML files
-✅ Automated infrastructure using Terraform
-✅ Understood Minikube and local orchestration environments
+✅ * Built and containerized a Flask app with Docker
+✅ * Managed deployment with Kubernetes YAML files
+✅ * Automated infrastructure using Terraform
+* ✅ Understood Minikube and local orchestration environments
 
 ---
 
 **Akash Majumdar**
-Cloud & DevOps Enthusiast
-📧 [search4akash@outlook.com](mailto:search4akash@outlook.com)
-🔗 [LinkedIn](https://www.linkedin.com/in/akashmajumdar2003)
+* **Azure Cloud & DevOps Enthusiast**
+* 📧 [search4akash@outlook.com](mailto:search4akash@outlook.com)
+* 🔗 [LinkedIn](https://www.linkedin.com/in/akashmajumdar2003)
