@@ -22,6 +22,8 @@ This project demonstrates deploying a simple **Flask web app** using:
 ├── requirements.txt            # Flask Dependencies
 └── .gitignore                  # Ignores Terraform state, Lockfiles, etc.
 └── demo.mp4                    # View the demonstration of running app (download the RAW file :)
+└── assets/
+    └── architecture.png   
 ```
 
 ---
