@@ -92,6 +92,20 @@ terraform apply
 
 ---
 
+## 🎥 Project Demo
+
+📽️ **[Watch the Full Demo Video](https://tinyurl.com/2wjzpy25)**
+
+> This video walks you through:
+> - Docker image build
+> - Kubernetes deployment with YAML
+> - Infrastructure provisioning using Terraform
+> - Minikube NodePort service access
+
+> ⚠️ *Note:* GitHub does not support playback of `.mp4` files directly. Use the link above to view the demo.
+
+---
+
 ### 📄 Deliverables Summary
 
 | Step | Task           | Resource Link                                |
